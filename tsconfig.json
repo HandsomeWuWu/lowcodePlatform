@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "es6",
+        "target": "es5",
+        "jsx": "react",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "lib": ["dom", "DOM.Iterable", "ESNext"],
+        "types": ["node"],
+        "emitDecoratorMetadata":true,
+        "skipLibCheck": false,
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "experimentalDecorators":true,
+        "noEmit": true,
+    },
+    "include": [
+        "packages/editor/src",
+        "packages/compiler/src",
+      ],
+    "exclude": [
+        "node_modules",
+        "**/node_modules",
+        "**/__tests__",
+        "**/mock"
+    ]
+}

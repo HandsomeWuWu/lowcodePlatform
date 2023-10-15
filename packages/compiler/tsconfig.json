@@ -1,0 +1,25 @@
+{
+    "include": [
+        "src",
+        "*.ts",
+        "*.tsx"
+    ],
+    "compilerOptions": {
+        "jsx": "react",
+        "module": "esnext",
+        "lib": ["dom","DOM"],
+        "target": "es2018",
+        "outDir": "dist",
+        "noEmit": false,
+        "strict": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "noUnusedLocals": false,
+        "noFallthroughCasesInSwitch": true,
+        "baseUrl": ".",
+        "skipLibCheck": true,
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    }
+}
