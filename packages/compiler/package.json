@@ -2,7 +2,7 @@
   "private": true,
   "author": "Handsome WuWu <1042729119@qq.com>",
   "scripts": {
-    "dev": "umi dev",
+    "dev": "umi dev PORT=8001",
     "build": "umi build",
     "postinstall": "umi setup",
     "setup": "umi setup",
