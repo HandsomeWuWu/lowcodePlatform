@@ -1,6 +1,8 @@
-import { addData, getDataByIndex, getDataByKey, openDB } from '@/utils';
+import { addData, getDataByIndex, openDB } from '@/utils';
 import { Button, Checkbox, Form, Input } from 'antd';
+import Cookies from "js-cookie";
 import { useCallback, useEffect } from 'react';
+import { history } from 'umi';
 import s from './index.less';
 
 type FieldType = {
@@ -14,12 +16,16 @@ type dbObject = {
 }
 const LoginForm = () => {
     const onFinish = async (values: any) => {
+        const { username, password: inputPassword } = values;
         const userDB = await openDB('user') as dbObject;
-        const userData = await getDataByIndex(userDB, 'userData', 'indexUsername', 'asd');
-        const userData2 = await getDataByKey(userDB, 'userData', 1);
+        const userData = await getDataByIndex(userDB, 'userData', 'indexUsername', username);
+        const { password } = userData as Record<string, any>;
         console.log('userData============>', userData);
-        console.log('userData2============>', userData2);
         console.log('Success:', values);
+        if (password === inputPassword) {
+            Cookies.set('isLogin', true);
+            history.push('/');
+        }
     };
     const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);

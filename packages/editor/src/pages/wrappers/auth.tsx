@@ -1,8 +1,8 @@
+import Cookies from 'js-cookie';
 import { Navigate, Outlet } from 'umi';
 
-export default (props) => {
-  const isLogin = false;
-  
+export default () => {
+  const isLogin = Cookies.get('isLogin');
   if (isLogin) {
     return <Outlet />;
   } else{
