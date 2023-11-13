@@ -23,7 +23,7 @@ const LoginForm = () => {
         console.log('userData============>', userData);
         console.log('Success:', values);
         if (password === inputPassword) {
-            Cookies.set('isLogin', true);
+            Cookies.set('isLogin', '1');
             history.push('/');
         }
     };

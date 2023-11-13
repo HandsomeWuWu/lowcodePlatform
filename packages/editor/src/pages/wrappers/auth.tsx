@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'umi';
 
 export default () => {
   const isLogin = Cookies.get('isLogin');
-  if (isLogin) {
+  if (isLogin === '1') {
     return <Outlet />;
   } else{
     return <Navigate to="/login" />;
